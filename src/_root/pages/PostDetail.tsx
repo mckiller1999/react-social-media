@@ -27,8 +27,10 @@ const PostDetail = () => {
   );
 
   const handleDeletePost = () => {
-    deletePost({ postId: id, imageId: post?.imageId });
-    navigate(-1);
+    if (id) {
+      deletePost({ postId: id, imageId: post?.imageId });
+      navigate(-1);
+    }
   };
 
   return (
